@@ -139,6 +139,7 @@ public class Build : NukeBuild
         .DependsOn(Test)
         .Before(TearDown)
         .Consumes(Test)
+        .Produces(CoverageReportDirectory / $"*.xml")
         .Executes(() =>
         {
             if (TestProjects.Count == 0)
