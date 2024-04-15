@@ -372,3 +372,4 @@ TestResults/
 env/data/
 publish/
 artifact/
+.nuke/temp
