@@ -23,6 +23,7 @@ using System.Linq;
     CacheExcludePatterns = [],
     EnableGitHubToken = true,
     FetchDepth = 0,
+    PublishArtifacts = true,
     InvokedTargets = [nameof(TearDown)])]
 public class Build : NukeBuild
 {
@@ -168,7 +169,6 @@ public class Build : NukeBuild
                 .SetReportTypes(ReportTypes.Html)
                 .SetTargetDirectory(reportDirectory)
             );
-
 
             if (IsRunningAzurePipelines)
             {
