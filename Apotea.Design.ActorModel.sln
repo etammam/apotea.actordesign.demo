@@ -11,8 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AAA8D43E-3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Weight", "src\services\Apotea.Design.ActorModel.Services.Weight\Apotea.Design.ActorModel.Services.Weight.csproj", "{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Barcode", "src\services\Apotea.Design.ActorModel.Services.Barcode\Apotea.Design.ActorModel.Services.Barcode.csproj", "{DF91310F-7614-449B-A5EE-761D7FFEE7BE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.IMessages", "src\Apotea.Design.ActorModel.Services.IMessages\Apotea.Design.ActorModel.Services.IMessages.csproj", "{9173FA1C-C678-4B3A-85C7-29C900961816}"
@@ -27,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Barcode.Tests", "test\units\Apotea.Design.ActorModel.Services.Barcode.Tests\Apotea.Design.ActorModel.Services.Barcode.Tests.csproj", "{62F62954-FDA8-4FD5-8ECF-7C8914C9D78A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Weight.Tests", "test\units\Apotea.Design.ActorModel.Services.Weight.Tests\Apotea.Design.ActorModel.Services.Weight.Tests.csproj", "{1391AD4E-D6DD-46EC-B055-2BAA11914E19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Scale.Tests", "test\units\Apotea.Design.ActorModel.Services.Weight.Tests\Apotea.Design.ActorModel.Services.Scale.Tests.csproj", "{1391AD4E-D6DD-46EC-B055-2BAA11914E19}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Scale", "src\services\Apotea.Design.ActorModel.Services.Scale\Apotea.Design.ActorModel.Services.Scale.csproj", "{E244FF78-F541-4E86-947A-5859808E1FB2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DF91310F-7614-449B-A5EE-761D7FFEE7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DF91310F-7614-449B-A5EE-761D7FFEE7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF91310F-7614-449B-A5EE-761D7FFEE7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -61,13 +57,16 @@ Global
 		{1391AD4E-D6DD-46EC-B055-2BAA11914E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1391AD4E-D6DD-46EC-B055-2BAA11914E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1391AD4E-D6DD-46EC-B055-2BAA11914E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E244FF78-F541-4E86-947A-5859808E1FB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E244FF78-F541-4E86-947A-5859808E1FB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E244FF78-F541-4E86-947A-5859808E1FB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E244FF78-F541-4E86-947A-5859808E1FB2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C} = {395AA1E5-0FA9-4F9F-A8E5-5A87C04DB190}
-		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295} = {CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}
 		{DF91310F-7614-449B-A5EE-761D7FFEE7BE} = {CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}
 		{9173FA1C-C678-4B3A-85C7-29C900961816} = {395AA1E5-0FA9-4F9F-A8E5-5A87C04DB190}
 		{A1045FF9-AA0C-43DA-868A-358D1AB28D04} = {AAA8D43E-3300-40F4-89F7-C7F1CA6B9A45}
@@ -76,6 +75,7 @@ Global
 		{EAD2BBB8-1120-4830-B503-BE0976D2024F} = {0836E5BD-D210-4684-9868-06A25B0EB117}
 		{62F62954-FDA8-4FD5-8ECF-7C8914C9D78A} = {A1045FF9-AA0C-43DA-868A-358D1AB28D04}
 		{1391AD4E-D6DD-46EC-B055-2BAA11914E19} = {A1045FF9-AA0C-43DA-868A-358D1AB28D04}
+		{E244FF78-F541-4E86-947A-5859808E1FB2} = {CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E403F9F0-B43A-469E-AB32-4B30B86349D3}
