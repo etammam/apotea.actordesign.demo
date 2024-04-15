@@ -9,8 +9,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{0836E5BD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AAA8D43E-3300-40F4-89F7-C7F1CA6B9A45}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{82DBE3B8-DA79-434C-BBF1-E0C145C94B90}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Weight", "src\services\Apotea.Design.ActorModel.Services.Weight\Apotea.Design.ActorModel.Services.Weight.csproj", "{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}"
@@ -25,9 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "loads", "loads", "{83AD6780
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Weight.Tests", "test\integrations\Apotea.Design.ActorModel.Services.Weight.Tests\Apotea.Design.ActorModel.Services.Weight.Tests.csproj", "{92B72C49-57A0-4BA4-948D-8DFC7A57A6C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.Services.Barcode.Tests", "test\integrations\Apotea.Design.ActorModel.Services.Barcode.Tests\Apotea.Design.ActorModel.Services.Barcode.Tests.csproj", "{E518C956-64CF-46C4-B370-C8622A03F983}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Barcode.Tests", "test\integrations\Apotea.Design.ActorModel.Services.Barcode.Tests\Apotea.Design.ActorModel.Services.Barcode.Tests.csproj", "{E518C956-64CF-46C4-B370-C8622A03F983}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.LoadTests", "test\load\Apotea.Design.ActorModel.LoadTests\Apotea.Design.ActorModel.LoadTests.csproj", "{69F68F26-6397-4C67-969A-71CCA4165980}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.LoadTests", "test\load\Apotea.Design.ActorModel.LoadTests\Apotea.Design.ActorModel.LoadTests.csproj", "{69F68F26-6397-4C67-969A-71CCA4165980}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{EAD2BBB8-1120-4830-B503-BE0976D2024F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{82DBE3B8-DA79-434C-BBF1-E0C145C94B90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{82DBE3B8-DA79-434C-BBF1-E0C145C94B90}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{82DBE3B8-DA79-434C-BBF1-E0C145C94B90}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{82DBE3B8-DA79-434C-BBF1-E0C145C94B90}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,12 +59,13 @@ Global
 		{69F68F26-6397-4C67-969A-71CCA4165980}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69F68F26-6397-4C67-969A-71CCA4165980}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69F68F26-6397-4C67-969A-71CCA4165980}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD2BBB8-1120-4830-B503-BE0976D2024F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD2BBB8-1120-4830-B503-BE0976D2024F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{82DBE3B8-DA79-434C-BBF1-E0C145C94B90} = {0836E5BD-D210-4684-9868-06A25B0EB117}
 		{CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C} = {395AA1E5-0FA9-4F9F-A8E5-5A87C04DB190}
 		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295} = {CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}
 		{DF91310F-7614-449B-A5EE-761D7FFEE7BE} = {CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}
@@ -78,6 +75,7 @@ Global
 		{92B72C49-57A0-4BA4-948D-8DFC7A57A6C4} = {A1045FF9-AA0C-43DA-868A-358D1AB28D04}
 		{E518C956-64CF-46C4-B370-C8622A03F983} = {A1045FF9-AA0C-43DA-868A-358D1AB28D04}
 		{69F68F26-6397-4C67-969A-71CCA4165980} = {83AD6780-42D3-4F22-A798-7EAC2B233CC8}
+		{EAD2BBB8-1120-4830-B503-BE0976D2024F} = {0836E5BD-D210-4684-9868-06A25B0EB117}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E403F9F0-B43A-469E-AB32-4B30B86349D3}

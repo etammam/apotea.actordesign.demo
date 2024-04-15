@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Ignore generated documents
+.vscode/
+.idea/
+*.local.json
+*.xml
+TestResults/
+*.db
+env/data/
+publish/
+artifact/

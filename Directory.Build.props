@@ -5,7 +5,7 @@
 		<Authors>Islam Mostafa Tammam Abouzied.</Authors>
 		<Description>a proof of concept of a distributed system for services decoupling.</Description>
 		<RepositoryType>git</RepositoryType>
-		<TargetFramework>net7.0</TargetFramework>
+		<TargetFramework>net8.0</TargetFramework>
 		<ImplicitUsings>disable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 		<CodeAnalysisRuleSet>$(MSBuildThisFileDirectory).ruleset</CodeAnalysisRuleSet>
