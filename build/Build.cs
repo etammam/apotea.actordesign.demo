@@ -22,6 +22,7 @@ using System.Linq;
     CacheIncludePatterns = [".nuke/temp", "~/.nuget/packages"],
     CacheExcludePatterns = [],
     EnableGitHubToken = true,
+    FetchDepth = 0,
     InvokedTargets = [nameof(TearDown)])]
 public class Build : NukeBuild
 {
