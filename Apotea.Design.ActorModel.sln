@@ -13,13 +13,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.cspr
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.Services.Weight", "src\services\Apotea.Design.ActorModel.Services.Weight\Apotea.Design.ActorModel.Services.Weight.csproj", "{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Weight", "src\services\Apotea.Design.ActorModel.Services.Weight\Apotea.Design.ActorModel.Services.Weight.csproj", "{5DAEF7CE-6BF4-4C21-B99D-6036369AA295}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.Services.Barcode", "src\services\Apotea.Design.ActorModel.Services.Barcode\Apotea.Design.ActorModel.Services.Barcode.csproj", "{DF91310F-7614-449B-A5EE-761D7FFEE7BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Barcode", "src\services\Apotea.Design.ActorModel.Services.Barcode\Apotea.Design.ActorModel.Services.Barcode.csproj", "{DF91310F-7614-449B-A5EE-761D7FFEE7BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.Services.IMessages", "src\Apotea.Design.ActorModel.Services.IMessages\Apotea.Design.ActorModel.Services.IMessages.csproj", "{9173FA1C-C678-4B3A-85C7-29C900961816}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.IMessages", "src\Apotea.Design.ActorModel.Services.IMessages\Apotea.Design.ActorModel.Services.IMessages.csproj", "{9173FA1C-C678-4B3A-85C7-29C900961816}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.Services.Weight.Tests", "test\Apotea.Design.ActorModel.Services.Weight.Tests\Apotea.Design.ActorModel.Services.Weight.Tests.csproj", "{3046302A-3FA0-416B-B202-194ED1642232}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "integrations", "integrations", "{A1045FF9-AA0C-43DA-868A-358D1AB28D04}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "loads", "loads", "{83AD6780-42D3-4F22-A798-7EAC2B233CC8}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Weight.Tests", "test\integrations\Apotea.Design.ActorModel.Services.Weight.Tests\Apotea.Design.ActorModel.Services.Weight.Tests.csproj", "{92B72C49-57A0-4BA4-948D-8DFC7A57A6C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.Services.Barcode.Tests", "test\integrations\Apotea.Design.ActorModel.Services.Barcode.Tests\Apotea.Design.ActorModel.Services.Barcode.Tests.csproj", "{E518C956-64CF-46C4-B370-C8622A03F983}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.LoadTests", "test\load\Apotea.Design.ActorModel.LoadTests\Apotea.Design.ActorModel.LoadTests.csproj", "{69F68F26-6397-4C67-969A-71CCA4165980}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +51,18 @@ Global
 		{9173FA1C-C678-4B3A-85C7-29C900961816}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9173FA1C-C678-4B3A-85C7-29C900961816}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9173FA1C-C678-4B3A-85C7-29C900961816}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3046302A-3FA0-416B-B202-194ED1642232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3046302A-3FA0-416B-B202-194ED1642232}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3046302A-3FA0-416B-B202-194ED1642232}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3046302A-3FA0-416B-B202-194ED1642232}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92B72C49-57A0-4BA4-948D-8DFC7A57A6C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92B72C49-57A0-4BA4-948D-8DFC7A57A6C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92B72C49-57A0-4BA4-948D-8DFC7A57A6C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92B72C49-57A0-4BA4-948D-8DFC7A57A6C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E518C956-64CF-46C4-B370-C8622A03F983}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E518C956-64CF-46C4-B370-C8622A03F983}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E518C956-64CF-46C4-B370-C8622A03F983}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E518C956-64CF-46C4-B370-C8622A03F983}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69F68F26-6397-4C67-969A-71CCA4165980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69F68F26-6397-4C67-969A-71CCA4165980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69F68F26-6397-4C67-969A-71CCA4165980}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69F68F26-6397-4C67-969A-71CCA4165980}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,7 +73,11 @@ Global
 		{5DAEF7CE-6BF4-4C21-B99D-6036369AA295} = {CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}
 		{DF91310F-7614-449B-A5EE-761D7FFEE7BE} = {CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}
 		{9173FA1C-C678-4B3A-85C7-29C900961816} = {395AA1E5-0FA9-4F9F-A8E5-5A87C04DB190}
-		{3046302A-3FA0-416B-B202-194ED1642232} = {AAA8D43E-3300-40F4-89F7-C7F1CA6B9A45}
+		{A1045FF9-AA0C-43DA-868A-358D1AB28D04} = {AAA8D43E-3300-40F4-89F7-C7F1CA6B9A45}
+		{83AD6780-42D3-4F22-A798-7EAC2B233CC8} = {AAA8D43E-3300-40F4-89F7-C7F1CA6B9A45}
+		{92B72C49-57A0-4BA4-948D-8DFC7A57A6C4} = {A1045FF9-AA0C-43DA-868A-358D1AB28D04}
+		{E518C956-64CF-46C4-B370-C8622A03F983} = {A1045FF9-AA0C-43DA-868A-358D1AB28D04}
+		{69F68F26-6397-4C67-969A-71CCA4165980} = {83AD6780-42D3-4F22-A798-7EAC2B233CC8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E403F9F0-B43A-469E-AB32-4B30B86349D3}
