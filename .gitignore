@@ -369,7 +369,7 @@ FodyWeavers.xsd
 *.xml
 TestResults/
 *.db
-env/data/
-publish/
-artifact/
+.env/data/
+.publish/
+.artifact/
 .nuke/temp

@@ -9,17 +9,17 @@
 #
 #     - To trigger manual generation invoke:
 #
-#         nuke --generate-configuration GitHubActions_continuous --host GitHubActions
+#         nuke --generate-configuration GitHubActions_pr --host GitHubActions
 #
 # </auto-generated>
 # ------------------------------------------------------------------------------
 
-name: continuous
+name: pr
 
 on:
-  push:
+  pull_request:
     branches:
-      - main
+      - '*'
 
 jobs:
   ubuntu-latest:

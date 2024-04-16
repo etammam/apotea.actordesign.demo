@@ -16,7 +16,19 @@ using System.Linq;
 [GitHubActions(
     "continuous",
     GitHubActionsImage.UbuntuLatest,
-    On = [GitHubActionsTrigger.Push],
+    OnPushBranches = ["main"],
+    AutoGenerate = true,
+    CacheKeyFiles = ["**/global.json", "**/*.csproj"],
+    CacheIncludePatterns = [".nuke/temp", "~/.nuget/packages"],
+    CacheExcludePatterns = [],
+    EnableGitHubToken = true,
+    FetchDepth = 0,
+    PublishArtifacts = true,
+    InvokedTargets = [nameof(TearDown)])]
+[GitHubActions(
+    "pr",
+    GitHubActionsImage.UbuntuLatest,
+    OnPullRequestBranches = ["*"],
     AutoGenerate = true,
     CacheKeyFiles = ["**/global.json", "**/*.csproj"],
     CacheIncludePatterns = [".nuke/temp", "~/.nuget/packages"],
