@@ -48,7 +48,9 @@ namespace Apotea.Design.ActorModel.Services.ServicesDefault
                     listenOnAnyHostAddress: true,
                     gatewayPort: 30000
                 );
+
                 siloBuilder.UseRedisClustering(options.Value.RedisConnectionString);
+
                 siloBuilder.AddRedisGrainStorageAsDefault(rgs =>
                 {
                     rgs.ConfigurationOptions = ConfigurationOptions.Parse(options.Value.RedisConnectionString);

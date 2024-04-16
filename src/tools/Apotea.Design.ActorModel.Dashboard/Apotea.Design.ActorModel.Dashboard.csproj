@@ -20,4 +20,8 @@
 		<PackageReference Include="Microsoft.Orleans.OrleansTelemetryConsumers.Linux" Version="3.7.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Apotea.Design.ActorModel.Services.ServicesDefault\Apotea.Design.ActorModel.Services.ServicesDefault.csproj" />
+	</ItemGroup>
+
 </Project>

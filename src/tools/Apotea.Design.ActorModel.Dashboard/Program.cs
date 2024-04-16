@@ -1,3 +1,5 @@
+using Apotea.Design.ActorModel.Services.ServicesDefault;
+using Microsoft.Extensions.Options;
 using Orleans.Configuration;
 using Orleans.Versions.Compatibility;
 using Orleans.Versions.Selector;
@@ -11,25 +13,37 @@ namespace Apotea.Design.ActorModel.Dashboard
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.Configure<ClusterSiloConfiguration>(builder.Configuration.GetSection(nameof(ClusterSiloConfiguration)));
+
             builder.Host.UseOrleans(siloBuilder =>
             {
-                //o.ConfigureApplicationParts(parts => parts.AddFromApplicationBaseDirectory());
-                const string redisConnectionString = "localhost";
-                const int siloPort = 5001;
-                const string siloIpAddress = "127.0.0.1";
+                var serviceProvider = builder.Services.BuildServiceProvider().CreateScope().ServiceProvider;
+                var options = serviceProvider.GetRequiredService<IOptions<ClusterSiloConfiguration>>();
+
+                ArgumentNullException.ThrowIfNull(options.Value.IpAddress, "orleans cluster configuration IpAddress required");
+                ArgumentNullException.ThrowIfNull(options.Value.Port, "orleans cluster configuration port required");
+                ArgumentNullException.ThrowIfNull(options.Value.RedisConnectionString, "orleans cluster configuration redis connectionString required");
+
+                var isPortAvailable = NetworkScanner.IsPortOpen(options.Value.IpAddress, options.Value.Port, TimeSpan.FromSeconds(2));
+                var newPort = NetworkScanner.GetPort();
+                if (!isPortAvailable)
+                    Console.WriteLine("port {0}, is not available switching to another port: {1}", options.Value.Port, newPort);
+
+                siloBuilder.ConfigureEndpoints(
+                    advertisedIP: IPAddress.Parse(options.Value.IpAddress),
+                    siloPort: isPortAvailable ? options.Value.Port : newPort,
+                    listenOnAnyHostAddress: true,
+                    gatewayPort: 30000
+                );
+
                 siloBuilder.UseDashboardEmbeddedFiles();
                 siloBuilder.UseDashboard();
                 siloBuilder.AddActivityPropagation();
-                siloBuilder.ConfigureEndpoints(
-                    advertisedIP: IPAddress.Parse(siloIpAddress),
-                siloPort: siloPort,
-                listenOnAnyHostAddress: true,
-                    gatewayPort: 30000
-                );
-                siloBuilder.UseRedisClustering(redisConnectionString);
+
+                siloBuilder.UseRedisClustering(options.Value.RedisConnectionString);
                 siloBuilder.AddRedisGrainStorageAsDefault(rgs =>
                 {
-                    rgs.ConfigurationOptions = ConfigurationOptions.Parse(redisConnectionString);
+                    rgs.ConfigurationOptions = ConfigurationOptions.Parse(options.Value.RedisConnectionString);
                 });
 
                 siloBuilder.Configure<GrainVersioningOptions>(options =>

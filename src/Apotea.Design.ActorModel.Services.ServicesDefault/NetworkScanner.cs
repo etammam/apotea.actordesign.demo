@@ -4,7 +4,7 @@ using System.Net.Sockets;
 
 namespace Apotea.Design.ActorModel.Services.ServicesDefault
 {
-    internal class NetworkScanner
+    public static class NetworkScanner
     {
         public static int GetPort()
         {
@@ -28,13 +28,11 @@ namespace Apotea.Design.ActorModel.Services.ServicesDefault
         {
             try
             {
-                using (var client = new TcpClient())
-                {
-                    var result = client.BeginConnect(host, port, null, null);
-                    var success = result.AsyncWaitHandle.WaitOne(timeout);
-                    client.EndConnect(result);
-                    return success;
-                }
+                using var client = new TcpClient();
+                var result = client.BeginConnect(host, port, null, null);
+                var success = result.AsyncWaitHandle.WaitOne(timeout);
+                client.EndConnect(result);
+                return success;
             }
             catch
             {
