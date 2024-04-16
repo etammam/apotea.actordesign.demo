@@ -1,4 +1,4 @@
-
+using Apotea.Design.ActorModel.Services.ServicesDefault;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,16 +14,14 @@ namespace Apotea.Design.ActorModel.Services.Weight
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
             builder.Services.AddAuthorization();
-
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            var app = builder.Build();
+            builder.Services.AddOrleansClusterOptions();
+            builder.Services.AddOrleansClusterSetup();
 
-            // Configure the HTTP request pipeline.
+            var app = builder.Build();
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

@@ -5,4 +5,9 @@
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Apotea.Design.ActorModel.Services.IMessages\Apotea.Design.ActorModel.Services.IMessages.csproj" />
+	  <ProjectReference Include="..\..\Apotea.Design.ActorModel.Services.ServicesDefault\Apotea.Design.ActorModel.Services.ServicesDefault.csproj" />
+	</ItemGroup>
+
 </Project>

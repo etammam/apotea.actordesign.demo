@@ -34,8 +34,8 @@ public class Build : NukeBuild
 
     [Solution]
     readonly Solution Solution;
-    AbsolutePath ArtifactsDirectory => RootDirectory / "artifacts";
-    AbsolutePath PublishDirectory => RootDirectory / "publish";
+    AbsolutePath ArtifactsDirectory => RootDirectory / ".artifacts";
+    AbsolutePath PublishDirectory => RootDirectory / ".publish";
     List<Project> WebApiProjects => Solution.AllProjects.Where(p => p.Name.Contains("Api")).ToList();
     List<Project> TestProjects => Solution.AllProjects.Where(p => p.Name.Contains(".Tests")).ToList();
     AbsolutePath TestReportDirectory => ArtifactsDirectory / "test-reports";
