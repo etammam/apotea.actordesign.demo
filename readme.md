@@ -86,7 +86,7 @@ please visit the following link to discover what's inside [the-design-system](ht
 #### spining up.
 1. use [docker-compose](./env/service-dependencies.yml) to start the required service dependencies using the following command `docker compose -f ./.env/service-dependencies.yml --project-name apotea-am-demo up -d`
 2. to start the [barcode-service](./src/services/Apotea.Design.ActorModel.Services.Barcode) run the following command `dotnet run --urls=http://localhost:2001 --project ./src/services/Apotea.Design.ActorModel.Services.Barcode` and change the url each time you need to spin up a new instance of the same application.
-3. to start the [weight-service](./src/services/Apotea.Design.ActorModel.Services.Weight) run the following command `dotnet run --urls=http://localhost:3001 --project ./src/services/Apotea.Design.ActorModel.Services.Weight` and change the url each time you need to spin up a new instance of the same application.
+3. to start the [weight-service](./src/services/Apotea.Design.ActorModel.Services.Scale) run the following command `dotnet run --urls=http://localhost:3001 --project ./src/services/Apotea.Design.ActorModel.Services.Scale` and change the url each time you need to spin up a new instance of the same application.
 4. open your web browser to [`http://localhost:2001/api/get-weight/:id`](http://localhost:2001/api/get-weight/1234567)
 5. for intensive test run NBomber application to create a load traffic toward the service, then you can navigate to test result dashboard to figure out what's happend.
 

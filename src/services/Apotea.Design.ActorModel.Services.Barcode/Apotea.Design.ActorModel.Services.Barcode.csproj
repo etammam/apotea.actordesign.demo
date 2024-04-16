@@ -3,11 +3,14 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+		<PackageReference Include="Microsoft.Orleans.Server" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Orleans.Client" Version="8.0.0" />
+		<PackageReference Include="Microsoft.Orleans.Sdk" Version="8.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\Apotea.Design.ActorModel.Services.IMessages\Apotea.Design.ActorModel.Services.IMessages.csproj" />
-	  <ProjectReference Include="..\..\Apotea.Design.ActorModel.Services.ServicesDefault\Apotea.Design.ActorModel.Services.ServicesDefault.csproj" />
+		<ProjectReference Include="..\..\Apotea.Design.ActorModel.Services.IMessages\Apotea.Design.ActorModel.Services.IMessages.csproj" />
+		<ProjectReference Include="..\..\Apotea.Design.ActorModel.Services.ServicesDefault\Apotea.Design.ActorModel.Services.ServicesDefault.csproj" />
 	</ItemGroup>
 
 </Project>

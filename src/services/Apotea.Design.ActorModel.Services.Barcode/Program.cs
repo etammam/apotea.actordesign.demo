@@ -1,11 +1,11 @@
 
+using Apotea.Design.ActorModel.Services.IMessages;
 using Apotea.Design.ActorModel.Services.ServicesDefault;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Linq;
+using Orleans;
 
 namespace Apotea.Design.ActorModel.Services.Barcode
 {
@@ -35,24 +35,14 @@ namespace Apotea.Design.ActorModel.Services.Barcode
 
             app.UseAuthorization();
 
-            var summaries = new[]
-            {
-                "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-            };
 
-            app.MapGet("/weatherforecast", (HttpContext httpContext) =>
+            app.MapGet("/api/get-weight/{id:int}", ([FromRoute] int id, IGrainFactory grainFactory) =>
             {
-                var forecast = Enumerable.Range(1, 5).Select(index =>
-                    new WeatherForecast
-                    {
-                        Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                        TemperatureC = Random.Shared.Next(-20, 55),
-                        Summary = summaries[Random.Shared.Next(summaries.Length)]
-                    })
-                    .ToArray();
-                return forecast;
+                var scaleService = grainFactory.GetGrain<IScaleGrain>(id);
+                var weight = scaleService.GetCurrentWeight();
+                return weight;
             })
-            .WithName("GetWeatherForecast")
+            .WithName("get box weight")
             .WithOpenApi();
 
             app.Run();
