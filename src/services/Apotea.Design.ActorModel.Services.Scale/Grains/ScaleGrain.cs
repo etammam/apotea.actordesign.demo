@@ -18,7 +18,7 @@ namespace Apotea.Design.ActorModel.Services.Scale.Grains
         public Task<int> GetCurrentWeight()
         {
             var sortboxId = this.GetPrimaryKeyLong();
-            _logger.LogTrace("getting current weight for sortbox with id {sortboxId}", sortboxId);
+            _logger.LogInformation("getting current weight for sortbox with id {sortboxId}", sortboxId);
             var weight = Random.Shared.Next(100, 800);
             return Task.FromResult(weight);
         }
