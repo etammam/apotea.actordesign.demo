@@ -1,7 +1,7 @@
 ﻿using Apotea.Design.ActorModel.Services.IMessages;
 using Microsoft.Extensions.Logging;
 using Orleans;
-using System.Linq;
+using System;
 using System.Threading.Tasks;
 
 namespace Apotea.Design.ActorModel.Services.Scale.Grains
@@ -19,7 +19,7 @@ namespace Apotea.Design.ActorModel.Services.Scale.Grains
         {
             var sortboxId = this.GetPrimaryKeyLong();
             _logger.LogTrace("getting current weight for sortbox with id {sortboxId}", sortboxId);
-            var weight = Enumerable.Range(100, 800).FirstOrDefault();
+            var weight = Random.Shared.Next(100, 800);
             return Task.FromResult(weight);
         }
     }
