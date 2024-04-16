@@ -27,9 +27,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Se
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Scale", "src\services\Apotea.Design.ActorModel.Services.Scale\Apotea.Design.ActorModel.Services.Scale.csproj", "{E244FF78-F541-4E86-947A-5859808E1FB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.Services.ServicesDefault", "src\Apotea.Design.ActorModel.Services.ServicesDefault\Apotea.Design.ActorModel.Services.ServicesDefault.csproj", "{3B070CE7-16F4-46F5-B128-DE5CED9734EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.ServicesDefault", "src\Apotea.Design.ActorModel.Services.ServicesDefault\Apotea.Design.ActorModel.Services.ServicesDefault.csproj", "{3B070CE7-16F4-46F5-B128-DE5CED9734EE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Apotea.Design.ActorModel.Services.Scale.Tests", "test\units\Apotea.Design.ActorModel.Services.Scale.Tests\Apotea.Design.ActorModel.Services.Scale.Tests.csproj", "{891F9B85-02D5-4687-9ACC-8237ACFAE4AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Apotea.Design.ActorModel.Dashboard", "src\tools\Apotea.Design.ActorModel.Dashboard\Apotea.Design.ActorModel.Dashboard.csproj", "{63BAF038-9130-459A-926D-074D7213ED3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{891F9B85-02D5-4687-9ACC-8237ACFAE4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{891F9B85-02D5-4687-9ACC-8237ACFAE4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{891F9B85-02D5-4687-9ACC-8237ACFAE4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63BAF038-9130-459A-926D-074D7213ED3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63BAF038-9130-459A-926D-074D7213ED3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63BAF038-9130-459A-926D-074D7213ED3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63BAF038-9130-459A-926D-074D7213ED3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -83,6 +89,7 @@ Global
 		{E244FF78-F541-4E86-947A-5859808E1FB2} = {CA025A7F-D36E-4B4E-A2A5-0A92681F2D7C}
 		{3B070CE7-16F4-46F5-B128-DE5CED9734EE} = {395AA1E5-0FA9-4F9F-A8E5-5A87C04DB190}
 		{891F9B85-02D5-4687-9ACC-8237ACFAE4AB} = {A1045FF9-AA0C-43DA-868A-358D1AB28D04}
+		{63BAF038-9130-459A-926D-074D7213ED3D} = {395AA1E5-0FA9-4F9F-A8E5-5A87C04DB190}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E403F9F0-B43A-469E-AB32-4B30B86349D3}

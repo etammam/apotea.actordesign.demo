@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Sockets;
 
 namespace Apotea.Design.ActorModel.Services.ServicesDefault
@@ -21,6 +22,24 @@ namespace Apotea.Design.ActorModel.Services.ServicesDefault
                 socket.Close();
             }
             return port;
+        }
+
+        public static bool IsPortOpen(string host, int port, TimeSpan timeout)
+        {
+            try
+            {
+                using (var client = new TcpClient())
+                {
+                    var result = client.BeginConnect(host, port, null, null);
+                    var success = result.AsyncWaitHandle.WaitOne(timeout);
+                    client.EndConnect(result);
+                    return success;
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

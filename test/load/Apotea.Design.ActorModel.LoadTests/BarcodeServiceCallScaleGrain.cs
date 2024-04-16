@@ -15,12 +15,12 @@ namespace Apotea.Design.ActorModel.LoadTests
         {
             using var httpClient = new HttpClient();
             httpClient.BaseAddress = new Uri("http://localhost:2001");
-
             var scenario = Scenario.Create("http_load_test", async context =>
             {
                 var step1 = await Step.Run("step_1", context, async () =>
                 {
-                    var request = Http.CreateRequest("GET", "/api/get-weight/12");
+                    var boxId = Random.Shared.Next(60, 120);
+                    var request = Http.CreateRequest("GET", $"/api/get-weight/{boxId}");
 
                     var response = await Http.Send(httpClient, request);
 

@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using Orleans;
 using Orleans.Configuration;
 using Orleans.Hosting;
 using Orleans.Versions.Compatibility;
@@ -24,8 +25,10 @@ namespace Apotea.Design.ActorModel.Services.ServicesDefault
 
         public static void AddOrleansClusterSetup(this IServiceCollection services)
         {
-            var options = services.BuildServiceProvider().CreateScope()
-                .ServiceProvider.GetRequiredService<IOptions<ClusterSiloConfiguration>>();
+            var serviceProvider = services.BuildServiceProvider().CreateScope()
+                .ServiceProvider;
+            var options = serviceProvider.GetRequiredService<IOptions<ClusterSiloConfiguration>>();
+
             ArgumentNullException.ThrowIfNull(options.Value.IpAddress, "orleans cluster configuration IpAddress required");
             ArgumentNullException.ThrowIfNull(options.Value.Port, "orleans cluster configuration port required");
             ArgumentNullException.ThrowIfNull(options.Value.RedisConnectionString, "orleans cluster configuration redis connectionString required");
@@ -33,9 +36,15 @@ namespace Apotea.Design.ActorModel.Services.ServicesDefault
             services.AddOrleans(siloBuilder =>
             {
                 siloBuilder.AddActivityPropagation();
+
+                var isPortAvailable = NetworkScanner.IsPortOpen(options.Value.IpAddress, options.Value.Port, TimeSpan.FromSeconds(2));
+                var newPort = NetworkScanner.GetPort();
+                if (!isPortAvailable)
+                    Console.WriteLine("port {0}, is not available switching to another port: {1}", options.Value.Port, newPort);
+
                 siloBuilder.ConfigureEndpoints(
                     advertisedIP: IPAddress.Parse(options.Value.IpAddress),
-                    siloPort: options.Value.Port,
+                    siloPort: isPortAvailable ? options.Value.Port : newPort,
                     listenOnAnyHostAddress: true,
                     gatewayPort: 30000
                 );
@@ -57,6 +66,7 @@ namespace Apotea.Design.ActorModel.Services.ServicesDefault
                     options.ServiceId = "demo-service";
                 });
 
+                siloBuilder.UseDashboard(o => o.HostSelf = false);
                 siloBuilder.AddReminders();
                 siloBuilder.UseInMemoryReminderService();
             });
