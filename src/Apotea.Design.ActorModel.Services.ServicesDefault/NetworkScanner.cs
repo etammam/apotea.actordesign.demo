@@ -24,7 +24,7 @@ namespace Apotea.Design.ActorModel.Services.ServicesDefault
             return port;
         }
 
-        public static bool IsPortOpen(string host, int port, TimeSpan timeout)
+        public static bool IsPortAvailable(string host, int port, TimeSpan timeout)
         {
             try
             {
@@ -32,11 +32,11 @@ namespace Apotea.Design.ActorModel.Services.ServicesDefault
                 var result = client.BeginConnect(host, port, null, null);
                 var success = result.AsyncWaitHandle.WaitOne(timeout);
                 client.EndConnect(result);
-                return success;
+                return !success;
             }
             catch
             {
-                return false;
+                return true;
             }
         }
     }

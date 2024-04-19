@@ -24,7 +24,7 @@ namespace Apotea.Design.ActorModel.Dashboard
                 ArgumentNullException.ThrowIfNull(options.Value.Port, "orleans cluster configuration port required");
                 ArgumentNullException.ThrowIfNull(options.Value.RedisConnectionString, "orleans cluster configuration redis connectionString required");
 
-                var isPortAvailable = NetworkScanner.IsPortOpen(options.Value.IpAddress, options.Value.Port, TimeSpan.FromSeconds(2));
+                var isPortAvailable = NetworkScanner.IsPortAvailable(options.Value.IpAddress, options.Value.Port, TimeSpan.FromSeconds(2));
                 var newPort = NetworkScanner.GetPort();
                 if (!isPortAvailable)
                     Console.WriteLine("port {0}, is not available switching to another port: {1}", options.Value.Port, newPort);
